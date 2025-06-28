@@ -1,0 +1,6 @@
+.env
+contracts_index/
+pycache/
+*.py[cod]
+*.sqlite
+.venv/
