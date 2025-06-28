@@ -2,7 +2,7 @@ import streamlit as st
 from rag_chat import get_chain, ask
 
 st.set_page_config(page_title="Contract-Bot MVP", page_icon="1", layout="wide")
-st.title("Contract-Bot MVP")
+st.title("LLM Contract Bot")
 st.caption("Priyanshu Rathee")
 
 if "chat_history" not in st.session_state:
