@@ -1,87 +1,126 @@
 # BillFlow
 
-> AI-powered contract intelligence platform for B2B billing agreements. Built with RAG, GPT-5-nano, and a modern React frontend.
+A full-stack contract intelligence platform demonstrating RAG architecture, AI-powered analytics, and modern web development.
 
 ![Dashboard](screenshots/dashboard.png)
 
-## ✨ Key Features
+## Architecture
 
-### 📊 Portfolio Dashboard
-Real-time visibility into your entire contract portfolio:
-- **$214M+ Annual Revenue** tracked across 100 billing agreements
-- **8.1M subscribers** managed with 99.7% SLA accuracy
-- Expiring contracts timeline with renewal urgency indicators
-- Client tier distribution and monthly processing metrics
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        React Frontend                           │
+│              TypeScript · Tailwind CSS · Vite                   │
+└─────────────────────────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                        FastAPI Backend                          │
+│                    REST API · Async · CORS                      │
+└─────────────────────────────────────────────────────────────────┘
+                                │
+                ┌───────────────┼───────────────┐
+                ▼               ▼               ▼
+        ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+        │   RAG Chain  │ │  Intelligence│ │   Revenue    │
+        │   LangChain  │ │    Engine    │ │    Engine    │
+        └──────────────┘ └──────────────┘ └──────────────┘
+                │               │               │
+                └───────────────┼───────────────┘
+                                ▼
+        ┌──────────────────────────────────────────────┐
+        │              ChromaDB Vector Store           │
+        │         Embeddings · MMR Retrieval           │
+        └──────────────────────────────────────────────┘
+                                │
+                                ▼
+        ┌──────────────────────────────────────────────┐
+        │              Azure OpenAI                    │
+        │       GPT-5-nano · text-embedding-3-small   │
+        └──────────────────────────────────────────────┘
+```
 
-### 💬 AI-Powered Contract Q&A
-![Chat Interface](screenshots/chat.png)
+## Features
 
-Ask natural language questions about your contracts:
-- *"What's the SLA for Sky Digital?"*
-- *"Which contracts are expiring soon?"*
-- *"Compare pricing across all Enterprise clients"*
+### RAG-Powered Document Q&A
+![Chat](screenshots/chat.png)
 
-Uses **RAG with MMR retrieval** across 60+ document chunks for comprehensive answers with source citations.
+- Natural language queries across 100+ contract documents
+- MMR (Maximal Marginal Relevance) retrieval for diverse, relevant results
+- Source citation with document references
+- Conversation context maintained across queries
 
-### 🧠 Intelligence Suite
-![Risk Analysis](screenshots/intelligence.png)
+### Contract Risk Analysis
+![Intelligence](screenshots/intelligence.png)
 
-- **Risk Scoring** - Automated analysis of 258 risk flags across all contracts
-- **Churn Prediction** - ML-based probability scores with recommended actions
-- **What-If Scenarios** - Simulate pricing changes, term extensions, tier upgrades
-- **Contract Comparison** - Side-by-side diff of any two agreements
-- **AI Contract Generation** - Describe terms in plain English, get a contract
+- Automated risk scoring based on contract terms
+- Churn probability prediction with contributing factors
+- Side-by-side contract comparison
+- What-if scenario modeling for term changes
+- AI-assisted contract generation from natural language
 
-### 💰 Revenue Command Center
-![Revenue Intelligence](screenshots/revenue.png)
+### Revenue Analytics Dashboard
+![Revenue Command Center](screenshots/revenue.png)
 
-The experimental (and most impressive) feature—AI-powered autonomous revenue operations:
+- Multi-tab analytics interface (Leakage, Opportunities, Signals, Actions)
+- Prioritized action queue with impact scoring
+- Client signal detection and alerting
+- AI-generated outreach content
 
-#### 🔴 Revenue Leakage Detection
-![Leakage Analysis](screenshots/revenue-leakage.png)
+#### Drill-Down Views
 
-Automatically identifies **$61.9M in annual revenue leakage** across 10 identified issues:
-- **Below Market Rate** - Clients paying 1-2pp below tier average
-- **Short Contract Exposure** - 12-month terms with high churn risk
-- Individual client breakdowns with specific dollar impact
+| Leakage Detection | Opportunity Identification |
+|-------------------|---------------------------|
+| ![Leakage](screenshots/revenue-leakage.png) | ![Opportunities](screenshots/revenue-opportunities.png) |
 
-#### 🚀 Revenue Opportunities
-![Opportunities](screenshots/revenue-opportunities.png)
+| Signal Monitoring | Action Queue |
+|-------------------|--------------|
+| ![Signals](screenshots/revenue-signals.png) | ![Actions](screenshots/revenue-actions.png) |
 
-AI-identified **$200.3M in untapped potential** across 10 opportunities:
-- **Term Extensions** - Extend 12 to 36-month commitments
-- **Billing Model Optimization** - Switch per-transaction to revenue share
-- Success probability scores and specific talking points
+## Tech Stack
 
-#### 📡 Client Signals
-![Signals](screenshots/revenue-signals.png)
-
-**10 active early warning signals** with 90% confidence:
-- Renewal risk detection (contracts expiring without discussion)
-- Engagement drop monitoring
-- Recommended responses for each signal
-
-#### ⚡ Prioritized Action Queue
-![Actions](screenshots/revenue-actions.png)
-
-**15 AI-prioritized actions** ranked by revenue impact:
-- Critical actions with due dates
-- Revenue impact quantified ($15.5M, $10.8M, $5.7M...)
-- One-click AI-generated outreach scripts
-
----
-
-## 🛠 Tech Stack
-
-| Layer | Technology |
-|-------|------------|
+| Layer | Technologies |
+|-------|--------------|
 | **Frontend** | React 18, TypeScript, Tailwind CSS, Vite |
-| **Backend** | FastAPI, Python 3.12 |
-| **AI/ML** | LangChain, GPT-5-nano, text-embedding-3-small |
-| **Vector DB** | ChromaDB |
-| **LLM Provider** | Azure OpenAI |
+| **Backend** | FastAPI, Python 3.12, Pydantic |
+| **AI/ML** | LangChain, Azure OpenAI (GPT-5-nano), ChromaDB |
+| **Document Processing** | PyPDF, tiktoken, text-splitters |
 
-## 🚀 Getting Started
+## Implementation Highlights
+
+### RAG Pipeline
+- Chunking strategy: 1500 characters with 200 overlap
+- Embedding model: `text-embedding-3-small` (1536 dimensions)
+- Retrieval: MMR with k=60 for multi-document comparison queries
+- Vector store: ChromaDB with persistent local storage
+
+### API Design
+- RESTful endpoints with Pydantic validation
+- Async request handling
+- Structured error responses
+- CORS configuration for frontend integration
+
+### Frontend Architecture
+- Single-page application with client-side routing
+- Real-time state management with React hooks
+- Responsive design with Tailwind utilities
+- Dark mode UI for analytics dashboards
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/chat` | Natural language contract queries |
+| `GET` | `/contracts` | List contracts with metadata |
+| `GET` | `/metrics` | Portfolio aggregations |
+| `GET` | `/intelligence/risk` | Risk analysis results |
+| `GET` | `/intelligence/churn` | Churn predictions |
+| `POST` | `/intelligence/simulate` | What-if scenario modeling |
+| `POST` | `/intelligence/compare` | Contract comparison |
+| `POST` | `/intelligence/generate` | AI contract generation |
+| `GET` | `/revenue/command-center` | Revenue analytics data |
+| `POST` | `/revenue/generate-outreach` | AI-generated outreach content |
+
+## Getting Started
 
 ### Prerequisites
 - Python 3.10+
@@ -91,29 +130,22 @@ AI-identified **$200.3M in untapped potential** across 10 opportunities:
 ### Setup
 
 ```bash
-# Clone and setup Python environment
-git clone https://github.com/yourusername/billflow.git
-cd billflow
+# Backend
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env  # Configure Azure OpenAI credentials
 
-# Configure Azure OpenAI
-cp .env.example .env
-# Edit .env with your credentials
-
-# Generate sample contracts (or add your own PDFs to /data)
+# Generate sample data
 python generate_contracts.py
-
-# Build the vector store
 python ingestion.py
 
-# Start the API server
-uvicorn backend_api:app --reload --port 8001
+# Start API server
+uvicorn backend_api:app --port 8001
 ```
 
 ```bash
-# In a new terminal - start the frontend
+# Frontend
 cd frontend
 npm install
 npm run dev
@@ -121,72 +153,29 @@ npm run dev
 
 Open http://localhost:5173
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-├── backend_api.py           # FastAPI server with 15+ endpoints
-├── rag_chat.py              # RAG chain with MMR retrieval
-├── contract_intelligence.py # Risk scoring, churn prediction, what-if
-├── revenue_intelligence.py  # Leakage detection, opportunity finding
-├── ingestion.py             # PDF/TXT → ChromaDB pipeline
-├── config.py                # Azure OpenAI configuration
-├── data/                    # 100+ contract files (PDF & TXT)
-├── frontend/                # React + TypeScript app
-│   └── src/App.tsx          # Single-file 3000+ LOC React app
-└── screenshots/             # UI screenshots
+├── backend_api.py           # FastAPI application
+├── rag_chat.py              # LangChain RAG implementation
+├── contract_intelligence.py # Risk and churn analysis
+├── revenue_intelligence.py  # Revenue analytics engine
+├── ingestion.py             # Document processing pipeline
+├── config.py                # Configuration management
+├── generate_contracts.py    # Synthetic data generation
+├── data/                    # Contract documents
+├── frontend/
+│   ├── src/
+│   │   ├── App.tsx          # Main application
+│   │   ├── main.tsx         # Entry point
+│   │   └── index.css        # Tailwind styles
+│   └── package.json
+└── screenshots/
 ```
-
-## 🔌 API Endpoints
-
-| Endpoint | Description |
-|----------|-------------|
-| `POST /chat` | Natural language contract queries |
-| `GET /contracts` | List all contracts with metadata |
-| `GET /metrics` | Portfolio-wide KPIs |
-| `GET /intelligence/risk` | Risk analysis for all contracts |
-| `GET /intelligence/churn` | Churn probability predictions |
-| `POST /intelligence/simulate` | What-if scenario modeling |
-| `POST /intelligence/compare` | Side-by-side contract diff |
-| `POST /intelligence/generate` | AI contract generation |
-| `GET /revenue/command-center` | Full revenue intelligence data |
-| `POST /revenue/generate-outreach` | AI-generated sales scripts |
-
-## 🧪 How the RAG Works
-
-1. **Ingestion**: Contracts (PDF/TXT) are chunked into ~1500 char pieces
-2. **Embedding**: Each chunk embedded with `text-embedding-3-small`
-3. **Storage**: Vectors stored in ChromaDB locally
-4. **Retrieval**: MMR retrieval fetches top-60 diverse chunks
-5. **Generation**: GPT-5-nano synthesizes answer with source citations
-
-The high k=60 is intentional—comparison questions like *"which client has the best SLA"* need visibility across multiple contracts.
-
-## 📈 Demo Data
-
-The included demo generates:
-- **100 billing contracts** with realistic terms
-- **$214M total ACV** across 4 client tiers
-- **8.1M subscribers** with varied SLAs
-- Randomized expiration dates, pricing models, and compliance terms
-
-## ⚠️ Known Limitations
-
-- Revenue signals use simulated data (no real payment integrations yet)
-- Contract generation fills templates—not fully generative
-- No authentication (demo/prototype mode)
-
-## 🔮 Roadmap Ideas
-
-- [ ] Salesforce/HubSpot CRM sync
-- [ ] Slack bot for quick queries
-- [ ] Email integration for direct outreach
-- [ ] Real payment/usage data ingestion
-- [ ] Mobile app with push alerts
 
 ---
 
-**Built as a proof-of-concept for AI-powered contract intelligence.** The revenue optimization features demonstrate what's possible when you combine RAG with domain-specific business logic.
-
-[![Made with LangChain](https://img.shields.io/badge/Made%20with-LangChain-blue)](https://langchain.com)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)](https://reactjs.org)
+[![LangChain](https://img.shields.io/badge/LangChain-Framework-blue)](https://langchain.com)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-Frontend-61DAFB)](https://reactjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Language-3178C6)](https://www.typescriptlang.org)
