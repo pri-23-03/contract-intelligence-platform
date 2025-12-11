@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00015
+Client: Central States ISP
+Client Tier: Business
+Location: Dallas, TX
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Central States ISP ("Client").
+Effective Date: February 1, 2024
+End Date: February 1, 2027
+Contract Term: 36 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Central States ISP
+Client Tier: Business
+Billing Model: Flat Fee
+Total Subscriber Count: 72,000
+Average Revenue Per User (ARPU): $62.00
+Client Monthly Revenue: $4,464,000.00
+Service Location: Dallas, TX
+Contact Phone: 1-800-114-1105
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Flat Fee
+Revenue Share Rate: 0%
+Per-Transaction Fee: $0.00
+Monthly Platform Fee: $22,000.00
+
+BillFlow Monthly Revenue: $22,000.00
+Annual Contract Value (ACV): $264,000.00
+Total Contract Value: $792,000.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 30 days
+Remittance Frequency: Monthly
+Late Payment Penalty: 2.0% per month
+Monthly Minimum Transactions: 60,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.7%
+Platform Uptime SLA: 99.95%
+Support Response Time: 2 hours
+Dispute Resolution Timeline: 7 business days
+SLA Credit: 15% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: Yes
+Data Retention Period: 36 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 86,400 subscribers
+Volume Discount Rate: 7%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 6 months
+Early Termination Fee: $132,000.00
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of February 1, 2027.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Central States ISP:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 72,000 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 2-hour response time for Business tier
+   - Dispute resolution within 7 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Central States ISP on a monthly basis.
+
+Remittance Frequency: Monthly
+Payment Terms: Net 30 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Central States ISP
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00015
+Generated for demo purposes

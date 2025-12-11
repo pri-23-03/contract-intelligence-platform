@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00014
+Client: Western Wave
+Client Tier: Standard
+Location: Los Angeles, CA
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Western Wave ("Client").
+Effective Date: May 15, 2024
+End Date: May 15, 2026
+Contract Term: 24 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Western Wave
+Client Tier: Standard
+Billing Model: Per-Transaction
+Total Subscriber Count: 35,000
+Average Revenue Per User (ARPU): $52.00
+Client Monthly Revenue: $1,820,000.00
+Service Location: Los Angeles, CA
+Contact Phone: 1-800-113-1098
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Per-Transaction
+Revenue Share Rate: 0%
+Per-Transaction Fee: $0.28
+Monthly Platform Fee: $1,800.00
+
+BillFlow Monthly Revenue: $11,600.00
+Annual Contract Value (ACV): $139,200.00
+Total Contract Value: $278,400.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 45 days
+Remittance Frequency: Monthly
+Late Payment Penalty: 2.0% per month
+Monthly Minimum Transactions: 30,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.5%
+Platform Uptime SLA: 99.9%
+Support Response Time: 4 hours
+Dispute Resolution Timeline: 10 business days
+SLA Credit: 10% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: No
+Data Retention Period: 24 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 42,000 subscribers
+Volume Discount Rate: 5%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 6 months
+Early Termination Fee: $69,600.00
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of May 15, 2026.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Western Wave:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 35,000 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 4-hour response time for Standard tier
+   - Dispute resolution within 10 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Western Wave on a monthly basis.
+
+Remittance Frequency: Monthly
+Payment Terms: Net 45 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Western Wave
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00014
+Generated for demo purposes

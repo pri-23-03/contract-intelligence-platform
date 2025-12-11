@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00004
+Client: Lakeside Fiber
+Client Tier: Enterprise
+Location: Chicago, IL
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Lakeside Fiber ("Client").
+Effective Date: January 1, 2024
+End Date: January 1, 2029
+Contract Term: 60 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Lakeside Fiber
+Client Tier: Enterprise
+Billing Model: Revenue Share
+Total Subscriber Count: 312,000
+Average Revenue Per User (ARPU): $95.00
+Client Monthly Revenue: $29,640,000.00
+Service Location: Chicago, IL
+Contact Phone: 1-800-103-1028
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Revenue Share
+Revenue Share Rate: 2.8%
+Per-Transaction Fee: $0.00
+Monthly Platform Fee: $0.00
+
+BillFlow Monthly Revenue: $829,920.00
+Annual Contract Value (ACV): $9,959,040.00
+Total Contract Value: $59,754,240.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 15 days
+Remittance Frequency: Weekly
+Late Payment Penalty: 1.5% per month
+Monthly Minimum Transactions: 300,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.95%
+Platform Uptime SLA: 99.99%
+Support Response Time: 1 hours
+Dispute Resolution Timeline: 5 business days
+SLA Credit: 25% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: Yes
+Data Retention Period: 84 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 374,400 subscribers
+Volume Discount Rate: 12%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 12 months
+Early Termination Fee: $9,959,040.00
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of January 1, 2029.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Lakeside Fiber:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 312,000 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 1-hour response time for Enterprise tier
+   - Dispute resolution within 5 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Lakeside Fiber on a weekly basis.
+
+Remittance Frequency: Weekly
+Payment Terms: Net 15 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Lakeside Fiber
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00004
+Generated for demo purposes

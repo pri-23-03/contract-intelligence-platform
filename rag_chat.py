@@ -1,92 +1,151 @@
-"""
-rag_chat.py
------------
-Builds the Retrieval‑Augmented Generation (RAG) chain and exposes a helper
-for asking questions against the contract vector store.
+"""RAG chain for querying B2B billing service agreements with professional formatting."""
 
-• Loads embeddings and the Chroma vector store.
-• Configures an Azure Chat model (o3‑mini by default).
-• Wraps both in a ConversationalRetrievalChain.
-• Provides `ask()` to run a query with scope guardrails.
-"""
-
-# --- Standard library
-import os
+import logging
 from typing import List, Tuple
 
-# --- Third‑party
-import dotenv                                 # loads .env config
-from langchain_openai import (
-    AzureChatOpenAI,                          # chat completion model
-    AzureOpenAIEmbeddings,                    # embedding model
+from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough, RunnableLambda
+
+from config import (
+    AZURE_OPENAI_ENDPOINT,
+    AZURE_OPENAI_KEY,
+    AZURE_OPENAI_API_VERSION,
+    AZURE_OPENAI_DEPLOYMENT,
+    AZURE_OPENAI_EMBEDDING_DEPLOYMENT,
+    INDEX_DIR,
+    COLLECTION_NAME,
+    RETRIEVER_K,
+    MAX_COMPLETION_TOKENS,
 )
-from langchain.chains import ConversationalRetrievalChain  # RAG wrapper
-from langchain_community.vectorstores import Chroma        # vector DB
 
-dotenv.load_dotenv()
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
 
-# LLM guardrail: keeps answers grounded in contract text
-SYSTEM_PROMPT = (
-    "You are Contract-Bot. Only answer questions that can be answered "
-    "using the provided contract excerpts. "
-    "If the answer is not in the excerpts, reply: "
-    "'I’m sorry, that’s outside the scope of these contracts.'"
-)
+SYSTEM_PROMPT = """You are BillFlow Assistant, an expert analyst for B2B billing service agreements.
 
-def get_chain(index_dir: str = "contracts_index") -> ConversationalRetrievalChain:
-    """
-    Construct and return a ConversationalRetrievalChain that
-    1. embeds queries,
-    2. retrieves top‑k relevant chunks from Chroma,
-    3. feeds them to the Azure Chat model for answer synthesis.
-    """
-    #  Instantiate embedding client (text‑embedding‑3‑small)
+## Your Role
+You help billing operations teams analyze their client contract portfolio, including:
+- Revenue share rates, transaction fees, and platform fees
+- SLA commitments (billing accuracy, platform uptime, support response times)
+- Payment terms and remittance schedules
+- Contract values (monthly, annual, total)
+- Client tiers (Enterprise, Business, Standard, Starter)
+- Compliance requirements (PCI-DSS, SOC 2)
+
+## Response Format Guidelines
+When generating reports or answering questions:
+
+1. **For lists of clients/contracts**: Use a markdown table with relevant columns
+2. **For single lookups**: Give a direct, concise answer
+3. **For comparisons**: Use a table comparing the key metrics
+4. **For compliance/SLA reports**: Structure with headers and bullet points
+5. **For financial summaries**: Include totals and averages where relevant
+
+## Formatting Rules
+- Use **bold** for key values and client names
+- Use tables for any data with 3+ items
+- Include a brief "Summary" or "Key Findings" section for reports
+- Round currency to nearest dollar, percentages to 2 decimals
+- Always cite the contract number (BSA-2024-XXXXX) when referencing specific agreements
+
+## Example Table Format
+| Client | Monthly Revenue | Billing Model | SLA |
+|--------|----------------|---------------|-----|
+| **Clearwave Internet** | $771,664 | Revenue Share (3.5%) | 99.9% |
+
+## Contract Data Available
+{context}
+
+## Question
+{question}
+
+Respond with well-formatted, professional analysis suitable for executive review."""
+
+
+def format_docs(docs):
+    """Format retrieved documents into a single string."""
+    formatted = []
+    for i, doc in enumerate(docs, 1):
+        source = doc.metadata.get('source', 'unknown').replace('data/', '').replace('.txt', '').replace('_', ' ').title()
+        formatted.append(f"[Source: {source}]\n{doc.page_content}")
+    return "\n\n---\n\n".join(formatted)
+
+
+def get_chain(index_dir: str = INDEX_DIR):
+    """Build and return the RAG chain using LCEL."""
     embeddings = AzureOpenAIEmbeddings(
-        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-        api_key=os.getenv("AZURE_OPENAI_KEY"),
-        api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2025-03-01-preview"),
-        model=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-3-small"),
+        azure_endpoint=AZURE_OPENAI_ENDPOINT,
+        api_key=AZURE_OPENAI_KEY,
+        api_version=AZURE_OPENAI_API_VERSION,
+        model=AZURE_OPENAI_EMBEDDING_DEPLOYMENT,
     )
 
-    # Open the persisted Chroma store and attach the embedding function
-    db = Chroma(
-        persist_directory=index_dir,
-        collection_name="contracts",
-        embedding_function=embeddings,
+    try:
+        db = Chroma(
+            persist_directory=index_dir,
+            collection_name=COLLECTION_NAME,
+            embedding_function=embeddings,
+        )
+    except Exception as e:
+        logger.error(f"Failed to open vector store: {e}")
+        raise
+
+    retriever = db.as_retriever(
+        search_type="mmr",
+        search_kwargs={"k": RETRIEVER_K, "fetch_k": RETRIEVER_K * 2}
     )
 
-    # Create chat LLM (o3‑mini) 
     llm = AzureChatOpenAI(
-        azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-        api_key=os.getenv("AZURE_OPENAI_KEY"),
-        deployment_name=os.getenv("AZURE_OPENAI_DEPLOYMENT", "o3-mini"),
-        api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2025-03-01-preview"),
-        max_completion_tokens=8192,
+        azure_endpoint=AZURE_OPENAI_ENDPOINT,
+        api_key=AZURE_OPENAI_KEY,
+        deployment_name=AZURE_OPENAI_DEPLOYMENT,
+        api_version=AZURE_OPENAI_API_VERSION,
+        max_completion_tokens=MAX_COMPLETION_TOKENS,
     )
 
-    # Wrap retriever + LLM into a single RAG chain
-    return ConversationalRetrievalChain.from_llm(
-        llm,
-        db.as_retriever(search_kwargs={"k": 40}),
-        return_source_documents=True,
-        chain_type="stuff",
+    prompt = ChatPromptTemplate.from_template(SYSTEM_PROMPT)
+
+    # Build LCEL chain
+    chain = (
+        {
+            "context": retriever | format_docs,
+            "question": RunnablePassthrough(),
+        }
+        | prompt
+        | llm
+        | StrOutputParser()
     )
 
+    return chain, retriever
 
-def ask(
-    chain: ConversationalRetrievalChain,
-    question: str,
-    chat_history: List[Tuple[str, str]],
-):
-    """
-    Run a single question through the RAG chain, applying the system prompt.
-    Returns (answer text, list_of_source_documents).
-    """
-    # Prefix question with scope guard prompt and invoke chain
-    result = chain.invoke(
-    {
-        "question": f"{SYSTEM_PROMPT}\n\nUser: {question}",
-        "chat_history": chat_history,
-    }
-)
-    return result["answer"], result["source_documents"]
+
+def _convert_chat_history(chat_history: List[Tuple[str, str]]) -> list:
+    """Convert (role, message) tuples to LangChain message objects."""
+    messages = []
+    for role, content in chat_history:
+        if role == "user":
+            messages.append(HumanMessage(content=content))
+        elif role == "assistant":
+            messages.append(AIMessage(content=content))
+    return messages
+
+
+def ask(chain_tuple, question: str, chat_history: List[Tuple[str, str]]):
+    """Run a question through the RAG chain. Returns (answer, sources)."""
+    chain, retriever = chain_tuple
+    
+    try:
+        # Get sources first
+        sources = retriever.invoke(question)
+        
+        # Get answer
+        answer = chain.invoke(question)
+        
+        return answer, sources
+    except Exception as e:
+        logger.error(f"Chain error: {e}")
+        raise

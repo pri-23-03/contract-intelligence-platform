@@ -1,9 +1,11 @@
+"""Streamlit UI for BillFlow - B2B Billing Contract Intelligence."""
+
 import streamlit as st
 from rag_chat import get_chain, ask
 
-st.set_page_config(page_title="Contract-Bot MVP", page_icon="1", layout="wide")
-st.title("Contract-Bot MVP")
-st.caption("Priyanshu Rathee")
+st.set_page_config(page_title="BillFlow", page_icon="💼", layout="wide")
+st.title("BillFlow")
+st.caption("B2B Billing Contract Intelligence")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -15,7 +17,7 @@ for role, message in st.session_state.chat_history:
     with st.chat_message(role):
         st.markdown(message)
 
-user_input = st.chat_input("Ask about the contracts…")
+user_input = st.chat_input("Ask about billing agreements, SLAs, or revenue...")
 
 if user_input:
     st.session_state.chat_history.append(("user", user_input))

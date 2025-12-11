@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00010
+Client: Sunset Networks
+Client Tier: Standard
+Location: Phoenix, AZ
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Sunset Networks ("Client").
+Effective Date: May 1, 2024
+End Date: May 1, 2026
+Contract Term: 24 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Sunset Networks
+Client Tier: Standard
+Billing Model: Flat Fee
+Total Subscriber Count: 22,000
+Average Revenue Per User (ARPU): $58.00
+Client Monthly Revenue: $1,276,000.00
+Service Location: Phoenix, AZ
+Contact Phone: 1-800-109-1070
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Flat Fee
+Revenue Share Rate: 0%
+Per-Transaction Fee: $0.00
+Monthly Platform Fee: $8,500.00
+
+BillFlow Monthly Revenue: $8,500.00
+Annual Contract Value (ACV): $102,000.00
+Total Contract Value: $204,000.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 30 days
+Remittance Frequency: Monthly
+Late Payment Penalty: 2.0% per month
+Monthly Minimum Transactions: 18,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.5%
+Platform Uptime SLA: 99.9%
+Support Response Time: 4 hours
+Dispute Resolution Timeline: 10 business days
+SLA Credit: 10% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: No
+Data Retention Period: 24 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 26,400 subscribers
+Volume Discount Rate: 5%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 6 months
+Early Termination Fee: $51,000.00
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of May 1, 2026.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Sunset Networks:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 22,000 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 4-hour response time for Standard tier
+   - Dispute resolution within 10 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Sunset Networks on a monthly basis.
+
+Remittance Frequency: Monthly
+Payment Terms: Net 30 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Sunset Networks
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00010
+Generated for demo purposes

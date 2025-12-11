@@ -1,6 +1,81 @@
-.env
-contracts_index/
-pycache/
+# ========================
+# Python
+# ========================
+__pycache__/
 *.py[cod]
-*.sqlite
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+.Python
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
 .venv/
+env/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+
+# ========================
+# Environment & Secrets
+# ========================
+.env
+.env.local
+.env.*.local
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# ========================
+# Vector Store (ChromaDB)
+# ========================
+contracts_index/
+chroma_db/
+
+# ========================
+# Generated Files
+# ========================
+contract_data.json
+eval_errors.json
+*.log
+
+# ========================
+# Frontend (React/Vite)
+# ========================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.local
+*.tsbuildinfo
+.eslintcache
+
+# ========================
+# IDE & Editors
+# ========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+Desktop.ini

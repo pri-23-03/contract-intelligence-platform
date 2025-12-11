@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00003
+Client: Evergreen Networks
+Client Tier: Business
+Location: Portland, OR
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Evergreen Networks ("Client").
+Effective Date: March 1, 2024
+End Date: March 1, 2026
+Contract Term: 24 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Evergreen Networks
+Client Tier: Business
+Billing Model: Per-Transaction
+Total Subscriber Count: 87,500
+Average Revenue Per User (ARPU): $65.00
+Client Monthly Revenue: $5,687,500.00
+Service Location: Portland, OR
+Contact Phone: 1-800-102-1021
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Per-Transaction
+Revenue Share Rate: 0%
+Per-Transaction Fee: $0.35
+Monthly Platform Fee: $2,500.00
+
+BillFlow Monthly Revenue: $33,125.00
+Annual Contract Value (ACV): $397,500.00
+Total Contract Value: $795,000.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 45 days
+Remittance Frequency: Monthly
+Late Payment Penalty: 2.0% per month
+Monthly Minimum Transactions: 50,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.7%
+Platform Uptime SLA: 99.9%
+Support Response Time: 4 hours
+Dispute Resolution Timeline: 10 business days
+SLA Credit: 10% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: Yes
+Data Retention Period: 24 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 105,000 subscribers
+Volume Discount Rate: 6%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 6 months
+Early Termination Fee: $198,750.00
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of March 1, 2026.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Evergreen Networks:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 87,500 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 4-hour response time for Business tier
+   - Dispute resolution within 10 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Evergreen Networks on a monthly basis.
+
+Remittance Frequency: Monthly
+Payment Terms: Net 45 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Evergreen Networks
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00003
+Generated for demo purposes

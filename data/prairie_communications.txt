@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00007
+Client: Prairie Communications
+Client Tier: Starter
+Location: Kansas City, MO
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Prairie Communications ("Client").
+Effective Date: July 1, 2024
+End Date: July 1, 2025
+Contract Term: 12 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Prairie Communications
+Client Tier: Starter
+Billing Model: Per-Transaction
+Total Subscriber Count: 12,500
+Average Revenue Per User (ARPU): $42.00
+Client Monthly Revenue: $525,000.00
+Service Location: Kansas City, MO
+Contact Phone: 1-800-106-1049
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Per-Transaction
+Revenue Share Rate: 0%
+Per-Transaction Fee: $0.45
+Monthly Platform Fee: $1,000.00
+
+BillFlow Monthly Revenue: $6,625.00
+Annual Contract Value (ACV): $79,500.00
+Total Contract Value: $79,500.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 45 days
+Remittance Frequency: Monthly
+Late Payment Penalty: 2.5% per month
+Monthly Minimum Transactions: 10,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.5%
+Platform Uptime SLA: 99.9%
+Support Response Time: 8 hours
+Dispute Resolution Timeline: 14 business days
+SLA Credit: 5% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: No
+Data Retention Period: 12 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 15,000 subscribers
+Volume Discount Rate: 5%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 3 months
+Early Termination Fee: $19,875.00
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of July 1, 2025.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Prairie Communications:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 12,500 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 8-hour response time for Starter tier
+   - Dispute resolution within 14 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Prairie Communications on a monthly basis.
+
+Remittance Frequency: Monthly
+Payment Terms: Net 45 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Prairie Communications
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00007
+Generated for demo purposes

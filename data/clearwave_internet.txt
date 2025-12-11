@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00001
+Client: Clearwave Internet
+Client Tier: Enterprise
+Location: San Francisco, CA
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Clearwave Internet ("Client").
+Effective Date: January 15, 2024
+End Date: January 15, 2027
+Contract Term: 36 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Clearwave Internet
+Client Tier: Enterprise
+Billing Model: Revenue Share
+Total Subscriber Count: 245,000
+Average Revenue Per User (ARPU): $89.99
+Client Monthly Revenue: $22,047,550.00
+Service Location: San Francisco, CA
+Contact Phone: 1-800-100-1007
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Revenue Share
+Revenue Share Rate: 3.5%
+Per-Transaction Fee: $0.00
+Monthly Platform Fee: $0.00
+
+BillFlow Monthly Revenue: $771,664.25
+Annual Contract Value (ACV): $9,259,971.00
+Total Contract Value: $27,779,913.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 30 days
+Remittance Frequency: Weekly
+Late Payment Penalty: 1.5% per month
+Monthly Minimum Transactions: 200,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.9%
+Platform Uptime SLA: 99.99%
+Support Response Time: 1 hours
+Dispute Resolution Timeline: 5 business days
+SLA Credit: 25% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: Yes
+Data Retention Period: 84 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 294,000 subscribers
+Volume Discount Rate: 10%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 3 months
+Early Termination Fee: $2,314,992.75
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of January 15, 2027.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Clearwave Internet:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 245,000 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 1-hour response time for Enterprise tier
+   - Dispute resolution within 5 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Clearwave Internet on a weekly basis.
+
+Remittance Frequency: Weekly
+Payment Terms: Net 30 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Clearwave Internet
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00001
+Generated for demo purposes

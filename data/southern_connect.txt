@@ -1,0 +1,114 @@
+BILLFLOW SOLUTIONS
+BILLING SERVICES AGREEMENT
+
+Agreement Number: BSA-2024-00012
+Client: Southern Connect
+Client Tier: Enterprise
+Location: Atlanta, GA
+
+SECTION 1: CONTRACT OVERVIEW
+This Billing Services Agreement ("Agreement") is entered into between BillFlow Solutions ("Provider") and Southern Connect ("Client").
+Effective Date: January 15, 2024
+End Date: January 15, 2028
+Contract Term: 48 months
+
+SECTION 2: CLIENT INFORMATION
+Client Name: Southern Connect
+Client Tier: Enterprise
+Billing Model: Revenue Share
+Total Subscriber Count: 278,000
+Average Revenue Per User (ARPU): $92.00
+Client Monthly Revenue: $25,576,000.00
+Service Location: Atlanta, GA
+Contact Phone: 1-800-111-1084
+
+SECTION 3: FEE STRUCTURE AND COMPENSATION
+Billing Model: Revenue Share
+Revenue Share Rate: 2.75%
+Per-Transaction Fee: $0.00
+Monthly Platform Fee: $0.00
+
+BillFlow Monthly Revenue: $703,340.00
+Annual Contract Value (ACV): $8,440,080.00
+Total Contract Value: $33,760,320.00
+
+SECTION 4: PAYMENT TERMS
+Payment Terms: Net 15 days
+Remittance Frequency: Weekly
+Late Payment Penalty: 1.5% per month
+Monthly Minimum Transactions: 250,000
+
+SECTION 5: SERVICE LEVEL AGREEMENTS (SLA)
+Billing Accuracy SLA: 99.9%
+Platform Uptime SLA: 99.99%
+Support Response Time: 1 hours
+Dispute Resolution Timeline: 5 business days
+SLA Credit: 25% of monthly fee for SLA breach
+
+SECTION 6: COMPLIANCE AND SECURITY
+PCI-DSS Compliant: Yes
+SOC 2 Type II Certified: Yes
+Data Retention Period: 84 months
+
+SECTION 7: VOLUME DISCOUNTS
+Volume Discount Threshold: 333,600 subscribers
+Volume Discount Rate: 10%
+
+SECTION 8: TERMINATION PROVISIONS
+Early Termination Notice: 12 months
+Early Termination Fee: $8,440,080.00
+
+This fee represents the remaining contract value and applies if Client terminates
+the agreement before the end date of January 15, 2028.
+
+SECTION 9: SCOPE OF SERVICES
+BillFlow Solutions agrees to provide the following services to Southern Connect:
+
+1. SUBSCRIBER BILLING
+   - Monthly invoice generation for 278,000 subscribers
+   - Multiple payment method support (credit card, ACH, autopay)
+   - Prorated billing for mid-cycle changes
+   - Automatic retry for failed payments
+
+2. PAYMENT PROCESSING
+   - Secure PCI-DSS compliant payment processing
+   - Real-time transaction authorization
+   - Fraud detection and prevention
+   - Chargeback management
+
+3. COLLECTIONS
+   - Automated payment reminders
+   - Dunning management
+   - Collections escalation procedures
+   - Bad debt recovery assistance
+
+4. REPORTING AND ANALYTICS
+   - Real-time billing dashboard
+   - Revenue analytics and forecasting
+   - Subscriber churn analysis
+   - Custom report generation
+
+5. CUSTOMER SUPPORT
+   - Billing inquiry handling
+   - 1-hour response time for Enterprise tier
+   - Dispute resolution within 5 business days
+
+SECTION 10: REMITTANCE SCHEDULE
+BillFlow Solutions will remit collected funds to Southern Connect on a weekly basis.
+
+Remittance Frequency: Weekly
+Payment Terms: Net 15 days
+Wire Transfer: Available for amounts over $10,000
+ACH Transfer: Standard remittance method
+
+SECTION 11: SIGNATURES
+
+_____________________________     _____________________________
+BillFlow Solutions               Southern Connect
+Authorized Representative        Authorized Representative
+
+Date: _______________           Date: _______________
+
+---
+Contract Number: BSA-2024-00012
+Generated for demo purposes
