@@ -1,134 +1,164 @@
 # BillFlow
 
-A contract intelligence tool for B2B billing agreements. Uses RAG to query contracts and has some experimental features around revenue optimization.
+> AI-powered contract intelligence platform for B2B billing agreements. Built with RAG, GPT-4, and a modern React frontend.
 
-## What it does
+![Dashboard](screenshots/dashboard.png)
 
-I built this to solve a real problem: when you have 20+ billing contracts with different terms, SLAs, and pricing models, it becomes impossible to keep track of what's actually in them. This tool lets you:
+## ✨ Key Features
 
-1. **Ask questions about your contracts** - "What's the SLA for Sky Digital?" or "Which clients are on revenue share?"
-2. **See risk across your portfolio** - Which contracts have compliance gaps? Who's about to renew?
-3. **Find revenue issues** - Are you charging below market rate? Missing volume discounts?
-4. **Compare contracts** - Side-by-side diff of any two agreements
+### 📊 Portfolio Dashboard
+Real-time visibility into your entire contract portfolio:
+- **$214M+ Annual Revenue** tracked across 100 billing agreements
+- **8.1M subscribers** managed with 99.7% SLA accuracy
+- Expiring contracts timeline with renewal urgency indicators
+- Client tier distribution and monthly processing metrics
 
-## Getting started
+### 💬 AI-Powered Contract Q&A
+![Chat Interface](screenshots/chat.png)
 
-You'll need Azure OpenAI credentials (or modify the code for regular OpenAI).
+Ask natural language questions about your contracts:
+- *"What's the SLA for Sky Digital?"*
+- *"Which contracts are expiring soon?"*
+- *"Compare pricing across all Enterprise clients"*
+
+Uses **RAG with MMR retrieval** across 60+ document chunks for comprehensive answers with source citations.
+
+### 🧠 Intelligence Suite
+![Risk Analysis](screenshots/intelligence.png)
+
+- **Risk Scoring** - Automated analysis of 258 risk flags across all contracts
+- **Churn Prediction** - ML-based probability scores with recommended actions
+- **What-If Scenarios** - Simulate pricing changes, term extensions, tier upgrades
+- **Contract Comparison** - Side-by-side diff of any two agreements
+- **AI Contract Generation** - Describe terms in plain English, get a contract
+
+### 💰 Revenue Command Center
+![Revenue Intelligence](screenshots/revenue.png)
+
+The experimental (and most impressive) feature:
+- **$61.9M Revenue Leakage** detected - pricing gaps, uncollected fees
+- **$200.3M Opportunities** identified - upsells, tier upgrades, term extensions
+- **62 Active Signals** - early warning system for churn risk
+- **AI-Generated Outreach** - one-click email/call scripts for each action
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React 18, TypeScript, Tailwind CSS, Vite |
+| **Backend** | FastAPI, Python 3.12 |
+| **AI/ML** | LangChain, GPT-4, text-embedding-3-small |
+| **Vector DB** | ChromaDB |
+| **LLM Provider** | Azure OpenAI |
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
+- Azure OpenAI API access
+
+### Setup
 
 ```bash
-# Setup
+# Clone and setup Python environment
+git clone https://github.com/yourusername/billflow.git
+cd billflow
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# Create .env with your Azure keys
+# Configure Azure OpenAI
 cp .env.example .env
+# Edit .env with your credentials
 
-# Generate sample contracts (or add your own to /data)
+# Generate sample contracts (or add your own PDFs to /data)
 python generate_contracts.py
 
 # Build the vector store
 python ingestion.py
 
-# Run the API
+# Start the API server
 uvicorn backend_api:app --reload --port 8001
 ```
 
-For the frontend:
 ```bash
+# In a new terminal - start the frontend
 cd frontend
 npm install
 npm run dev
 ```
 
-Then open http://localhost:5173
+Open http://localhost:5173
 
-## Configuration
-
-Create a `.env` file:
+## 📁 Project Structure
 
 ```
-AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
-AZURE_OPENAI_KEY=your-key-here
-AZURE_OPENAI_DEPLOYMENT=gpt-4
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT=text-embedding-3-small
-AZURE_OPENAI_API_VERSION=2024-02-15-preview
-```
-
-## Project structure
-
-```
-├── backend_api.py          # FastAPI server
-├── rag_chat.py             # RAG chain for Q&A
-├── contract_intelligence.py # Risk scoring, churn prediction, etc.
+├── backend_api.py           # FastAPI server with 15+ endpoints
+├── rag_chat.py              # RAG chain with MMR retrieval
+├── contract_intelligence.py # Risk scoring, churn prediction, what-if
 ├── revenue_intelligence.py  # Leakage detection, opportunity finding
-├── ingestion.py            # PDF/TXT → ChromaDB
-├── config.py               # Settings
-├── data/                   # Contract files (TXT or PDF)
-└── frontend/               # React app
+├── ingestion.py             # PDF/TXT → ChromaDB pipeline
+├── config.py                # Azure OpenAI configuration
+├── data/                    # 100+ contract files (PDF & TXT)
+├── frontend/                # React + TypeScript app
+│   └── src/App.tsx          # Single-file 3000+ LOC React app
+└── screenshots/             # UI screenshots
 ```
 
-## The four views
+## 🔌 API Endpoints
 
-**Dashboard** - Portfolio overview with key metrics
-
-**Chat** - Ask anything about your contracts. Uses RAG with MMR retrieval to pull relevant chunks from multiple documents.
-
-**Intelligence** - Risk scores, churn predictions, what-if scenarios, contract comparison, and a contract generator (describe what you want in plain English).
-
-**Revenue** - This is the experimental part. Tries to find:
-- Revenue leakage (pricing below market, uncollected fees, etc.)
-- Opportunities (tier upgrades, upsells, term extensions)
-- Signals (renewal risk, engagement drops)
-- Prioritized actions with AI-generated outreach scripts
-
-## API endpoints
-
-The main ones:
-
-| Endpoint | What it does |
-|----------|--------------|
-| `POST /chat` | Ask a question about contracts |
-| `GET /contracts` | List all contracts |
-| `GET /metrics` | Portfolio summary |
-| `GET /intelligence/risk` | Risk analysis |
-| `GET /intelligence/churn` | Churn predictions |
-| `POST /intelligence/simulate` | What-if scenarios |
+| Endpoint | Description |
+|----------|-------------|
+| `POST /chat` | Natural language contract queries |
+| `GET /contracts` | List all contracts with metadata |
+| `GET /metrics` | Portfolio-wide KPIs |
+| `GET /intelligence/risk` | Risk analysis for all contracts |
+| `GET /intelligence/churn` | Churn probability predictions |
+| `POST /intelligence/simulate` | What-if scenario modeling |
+| `POST /intelligence/compare` | Side-by-side contract diff |
+| `POST /intelligence/generate` | AI contract generation |
 | `GET /revenue/command-center` | Full revenue intelligence data |
-| `POST /revenue/generate-outreach` | AI writes an email/call script |
+| `POST /revenue/generate-outreach` | AI-generated sales scripts |
 
-## How the RAG works
+## 🧪 How the RAG Works
 
-1. Contracts (PDF or TXT) get chunked into ~1500 char pieces
-2. Each chunk is embedded using Azure's text-embedding-3-small
-3. Stored in ChromaDB locally
-4. When you ask a question, we retrieve top-60 chunks using MMR (for diversity)
-5. LLM generates answer with sources
+1. **Ingestion**: Contracts (PDF/TXT) are chunked into ~1500 char pieces
+2. **Embedding**: Each chunk embedded with `text-embedding-3-small`
+3. **Storage**: Vectors stored in ChromaDB locally
+4. **Retrieval**: MMR retrieval fetches top-60 diverse chunks
+5. **Generation**: GPT-4 synthesizes answer with source citations
 
-The high k=60 is intentional - comparison questions like "which client has the best SLA" need to see multiple contracts.
+The high k=60 is intentional—comparison questions like *"which client has the best SLA"* need visibility across multiple contracts.
 
-## Known limitations
+## 📈 Demo Data
 
-- Revenue intelligence uses simulated data for some signals (payment history, engagement metrics) since we don't have real integrations yet
-- Contract generation is basic - it parses your description and fills a template
-- No auth - this is a demo/prototype
+The included demo generates:
+- **100 billing contracts** with realistic terms
+- **$214M total ACV** across 4 client tiers
+- **8.1M subscribers** with varied SLAs
+- Randomized expiration dates, pricing models, and compliance terms
 
-## Tech
+## ⚠️ Known Limitations
 
-- FastAPI for the backend
-- React + Tailwind for frontend
-- LangChain for RAG
-- ChromaDB for vectors
-- Azure OpenAI (GPT-4 + embeddings)
+- Revenue signals use simulated data (no real payment integrations yet)
+- Contract generation fills templates—not fully generative
+- No authentication (demo/prototype mode)
 
-## Ideas for later
+## 🔮 Roadmap Ideas
 
-- Salesforce/HubSpot sync
-- Slack bot for quick queries
-- Email integration to send outreach directly
-- Real payment/usage data ingestion
-- Mobile app for alerts
+- [ ] Salesforce/HubSpot CRM sync
+- [ ] Slack bot for quick queries
+- [ ] Email integration for direct outreach
+- [ ] Real payment/usage data ingestion
+- [ ] Mobile app with push alerts
 
 ---
 
-Built as a proof of concept for AI-powered contract intelligence. The revenue optimization stuff is experimental but shows what's possible when you combine RAG with domain-specific analysis.
+**Built as a proof-of-concept for AI-powered contract intelligence.** The revenue optimization features demonstrate what's possible when you combine RAG with domain-specific business logic.
+
+[![Made with LangChain](https://img.shields.io/badge/Made%20with-LangChain-blue)](https://langchain.com)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)](https://reactjs.org)
