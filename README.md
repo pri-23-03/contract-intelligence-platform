@@ -1,6 +1,6 @@
 # BillFlow
 
-> AI-powered contract intelligence platform for B2B billing agreements. Built with RAG, GPT-4, and a modern React frontend.
+> AI-powered contract intelligence platform for B2B billing agreements. Built with RAG, GPT-5-nano, and a modern React frontend.
 
 ![Dashboard](screenshots/dashboard.png)
 
@@ -77,7 +77,7 @@ AI-identified **$200.3M in untapped potential** across 10 opportunities:
 |-------|------------|
 | **Frontend** | React 18, TypeScript, Tailwind CSS, Vite |
 | **Backend** | FastAPI, Python 3.12 |
-| **AI/ML** | LangChain, GPT-4, text-embedding-3-small |
+| **AI/ML** | LangChain, GPT-5-nano, text-embedding-3-small |
 | **Vector DB** | ChromaDB |
 | **LLM Provider** | Azure OpenAI |
 
@@ -157,7 +157,7 @@ Open http://localhost:5173
 2. **Embedding**: Each chunk embedded with `text-embedding-3-small`
 3. **Storage**: Vectors stored in ChromaDB locally
 4. **Retrieval**: MMR retrieval fetches top-60 diverse chunks
-5. **Generation**: GPT-4 synthesizes answer with source citations
+5. **Generation**: GPT-5-nano synthesizes answer with source citations
 
 The high k=60 is intentional—comparison questions like *"which client has the best SLA"* need visibility across multiple contracts.
 
