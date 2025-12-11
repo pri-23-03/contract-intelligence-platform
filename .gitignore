@@ -55,6 +55,7 @@ eval_errors.json
 # Contract Files (generated)
 # ========================
 data/*.pdf
+eval_set.csv
 
 # ========================
 # Frontend (React/Vite)
